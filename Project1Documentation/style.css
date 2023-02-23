@@ -24,8 +24,18 @@ div {
   padding: 20px;
 }
 
+#codes {
+  background-color: #545454;
+  ;
+  padding: 20px;
+}
+
 #diagram_img {
   width: 100%;
+}
+
+#code_img {
+  width: 80%;
 }
 
 .process_img {
