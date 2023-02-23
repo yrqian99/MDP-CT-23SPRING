@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>project1Documentation</title>
+</head>
+<body>
+    <div id="intro">
+        <h1>Rue's Rube Goldberg machine: Dog Dairy Generator</h1> 
+        <p>A Rube Goldberg machine consist of a series of simple unrelated devices; the action of each triggers the initiation of the next, eventually resulting in achieving a stated goal. <br>
+        In this project, I made my own Rube Goldberg machine in the form of "A Dog Dairy Generator": simply enter your dog's breed and your zip code, it will present you the dairy of your dog at that day.</p>
+    </div>
+    
+    <div id="diagram">
+        <p>Here's my initial diagram:</p>
+        <img src="images\diagram.png" alt="diagram" id="diagram_img">
+    </div>
 
+    <div id="process">
+        <p>I started with the <a href="https://dog.ceo/dog-api">Dog Api</a>. The first obstacle I encountered was to use a textbox rather than a button. So that whatever breed the user enters, the DogApi will return an image of that breed.</p>
+        <img src="images\1dog.PNG" alt="progress1" class="process_img">
+        <p></p>
+        <p>Next, I added <a href="https://openweathermap.org/api">the Weather API from OpenWeather</a>, which allow people to enter a zipcode and get a string that describes the weather condition of that region. </p>
+        <img src="images\2getting weather data.PNG" alt="progress2" class="process_img">
+        <p></p>
+        <img src="images\3getting weather data nailed.PNG" alt="progress3" class="process_img">
+        <p></p>
+        <p>Then, my machine branchs out into two directions depending on the current weather condition: if the weather isn't rainy, it will return a "yes" gif from <a href="https://yesno.wtf/#api"> YesOrNo Api</a>. <br> 
+            Otherwise, it will return a "no" gif. I used an If statement to achieve this function.</p>
+        <img src="images\4yesornoimg.PNG" alt="progress4" class="process_img">
+        <p></p>
+        <p>In the "if it's not rainy" branch, I initially wanted to bring up a Map ApI that finds the nearest dog park based on the input address. I tried to use GoogleMap APi at first but failed to get a valid authentication. <br> 
+            Then, I decided switch to an OpenMap APi but encountered lots of difficulties even with in-class troubleshooting. So I gave up this idea, and uses a <a href="https://www.thecocktaildb.com/api.php">Cocktail Api</a> instead.</p>
+        <img src="images\8errorgeo.PNG" alt="progress5" class="process_img">
+        <img src="images\10fetchcocktail.PNG" alt="progress6" class="process_img">
+        <p></p>
+        <p>On the "if it's rainy branch, I simply brought in a DIY Api that returns fun indoor activities for spending time with my dog at home"</p>
+        <img src="images\9fetchdiydata.PNG" alt="progress7" class="process_img">
+
+        <p>Lastly, I cleaned up and organized my code, deleting the extra submit buttons so that the users only have to submit once after filling both textbox. <br> 
+        <h1>And here's what I got: a dog dairy generator!</h1>
+        </p>
+        <img src="images\finished1.PNG" alt="progress8" class="process_img">
+        <img src="images\finished2.PNG" alt="progress9" class="process_img">
+    </div>
+
+
+</body>
+</html>
