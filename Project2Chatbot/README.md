@@ -32,4 +32,42 @@ Next, I managed to make the bot randomly pick one of the members in the list:
 
 <img src="images\randomly_pick_one_code.png" alt="randomly_pick_one_code" style="zoom:50%;" />
 
-<img src="images\randomly_pick_one.png" alt="randomly_pick_one" style="zoom:50%;" />
+<img src="images\randomly_pick_one.png" alt="randomly_pick_one" style="zoom: 80%;" />
+
+------
+
+Then a major success appears. Following the [Word Vector algorithm tutorial](https://gist.github.com/aparrish/2f562e3737544cf29aaf1af30362f469), I managed to import numpy and spacy, which are the two libraries needed for the algorithm, and conducted a similarity test between two victors, an sentence analysis, and eventually managed to compare the similarity between two words.
+
+<img src="images\sentencesimilaritystep1_importednumpy.PNG" alt="sentencesimilaritystep1_importednumpy" style="zoom:60%;" />
+
+<img src="images\sentencesimilaritystep2_importedspacyforwordvector.PNG" alt="sentencesimilaritystep2_importedspacyforwordvector" style="zoom:60%;" />
+
+<img src="images\sentencesimilaritystep2_wordcomparisonnailed.PNG" alt="sentencesimilaritystep2_wordcomparisonnailed" style="zoom:60%;" />
+
+------
+
+Then, I imported the Shakespeare's Sonnets, and managed to compare the first compliment with the text: 
+
+<img src="images\complimentgamemodified_secondtry.PNG" alt="complimentgamemodified_secondtry" style="zoom:60%;" />
+
+After making sure it's working as I wanted, I made it successful to compare the first three compliments with the text: 
+
+<img src="C:\Users\Rue\Documents\GitHub\MDP-CT-23SPRING\Project2Chatbot\images\complimentgamemodifie_thridtry naileddiscord.PNG" alt="complimentgamemodifie_thridtry naileddiscord" style="zoom: 80%;" />
+
+<img src="images\Inkedcomplimentgamemodifiedthridtrynailed2.jpg" alt="Inkedcomplimentgamemodifiedthridtrynailed2" style="zoom:60%;" />
+
+------
+
+Next, I made the bot compare the similarities between the three compliments, and announcing the one who has the highest similarity (lowest distance) as winner of this round of battle:
+
+ <img src="images\complimentgamemodifiedthridtryinnerannouncing2.PNG" alt="complimentgamemodifiedthridtryinnerannouncing2" style="zoom:60%;" />
+
+<img src="images\complimentgamemodifiedthridtrywinnerannouncing2discord.PNG" alt="complimentgamemodifiedthridtrywinnerannouncing2discord" style="zoom: 80%;" />
+
+------
+
+Last but not least, I combine the sonnet lines that the compliments are most similar to into one, and put an end to the battle:
+
+<img src="images\finished_console.PNG" alt="finished_console" style="zoom:60%;" />
+
+<img src="images\finished_discord.PNG" style="zoom:80%;" />
