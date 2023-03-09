@@ -22,6 +22,6 @@ I started by printing the list of members in a discord channel:
 
 Before pivoting to the idea of throwing compliments to one member, I had the idea of pairing the members up into groups of two and let them compliment each other:
 
-![randomly_pair_up_code](C:\Users\Rue\Dropbox\MDP\23SPRING\CT\Project2Bot\documentation\randomly_pair_up_code.png)
+![randomly_pair_up_code](images\randomly_pair_up_code.png)
 
 ![randomly_pair_up](images\randomly_pair_up.png)
