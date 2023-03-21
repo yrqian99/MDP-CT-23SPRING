@@ -152,3 +152,12 @@ multiple algorithms executed to a survey-style interface
 
 
 
+!(images/project3websitesketch.png)
+
+![replitflaskdemo1](images/replitflaskdemo1.PNG)![replitflask](images/replitflask.PNG)
+
+
+
+My sketch
+
+![project3websitesketch](images/project3websitesketch.png)
