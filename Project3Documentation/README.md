@@ -82,6 +82,8 @@ My initial idea is to make a website where user enters a piece of text, and then
 
 ------
 
+
+
 At this point, although it seems everything is working, I can't help noticing some problems within the current structure I have:
 
 1. Word2Vec is designed to capture the semantic relationships between words, and mapping the vectors to RGB space doesn't guarantee a meaningful connection to colors.
@@ -92,7 +94,11 @@ After talking to Adit, we come up with the next step iteration on the current st
 
 Instead of normalize the word vector into RGB range, we define specific word analogy of primary colors as anchor points of red, green and blue (we call these three words "colorwords"), and calculate the distance of the input word to the colorwords. For example, the three colorwords that represent <u>red</u>, <u>blue</u> and <u>green</u> could be "<u>lava</u>", <u>"sky"</u> and <u>"grass"</u>. Let's say the input word is "book", then respectively calculate the distance between "book " and "<u>lava</u>", <u>"sky"</u> and <u>"grass"</u>, so that we get three numbers that represents similarity of "book" to each colorword. Then if we normalize the three numbers to the range 0-255, we got a new RGB vector that represent the word "book". Applying this approach could ideally skip the reducing dimensionality process, so that we don't have to reduce the Word2Vec model to only the first 1000 word.
 
+
+
 ------
+
+
 
 #### For my second try, I first managed to modify my code according to Adit's feedback.
 
@@ -116,21 +122,19 @@ The first normalization method (method A) I used is to evenly map the similariti
 
 
 
-The second normalization method (method B) I tried is to map the highest similarity to 255 and the lowest similarity to 0, and the other similarity is mapped between 0 to 255. I soon realize that this method always returns a very bright color because the rgb coordinates are too extreme.
+The second normalization method (method B) I tried is to map the highest similarity to 255 and the lowest similarity to 0, and the other similarity is mapped between 0 to 255. I soon realized that this method always returns a very bright color because the rgb coordinates are too extreme.
 
 ![normalizemethod2water](images/normalizemethod2water.PNG)
 
 
 
-Then I realized that a more balanced color output is needed. To achieve this, I first tried to combine the two method by bringing to an blending factor between 0 and 1, where 0 is fully method A and 1 is fully method B.
+Then I realized that a more balanced color output is needed. To achieve this, I first tried to combine the two methods by bringing to an blending factor between 0 and 1, where 0 is fully method A and 1 is fully method B.
 
+![normalizemethod1updated](images/normalizemethod1updated.PNG)
 
+Another way I thought of to get a less extreme color is to get the color from a more moderate color range, therefore I decide to bring in a variable called range_divider between 0 and 0.5 that control the range of color for normalization. (0 is fully saturated and 0.5 is not saturated at all)
 
-
-
-
-
-bring in another coordinate like saturation
+![normalizemethod2updated](images/normalizemethod2updated.PNG)
 
 
 
