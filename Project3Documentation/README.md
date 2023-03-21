@@ -40,31 +40,31 @@ My initial idea is to make a website where user enters a piece of text, and then
 
 
 
-5. **Import RGB color data**
+6. **Import RGB color data**
 
-   Referring to [Understanding Word Vectors by Allison Parrish](https://gist.github.com/aparrish/2f562e3737544cf29aaf1af30362f469), the RGB color data I chose is this [color data](https://github.com/dariusk/corpora/blob/master/data/colors/xkcd.json) from [xkcd color survey](https://blog.xkcd.com/2010/05/03/color-survey-results/).
+Referring to [Understanding Word Vectors by Allison Parrish](https://gist.github.com/aparrish/2f562e3737544cf29aaf1af30362f469), the RGB color data I chose is this [color data](https://github.com/dariusk/corpora/blob/master/data/colors/xkcd.json) from [xkcd color survey](https://blog.xkcd.com/2010/05/03/color-survey-results/).
 
-   ![importedcolordata](images/importedcolordata.PNG)
+![importedcolordata](images/importedcolordata.PNG)
 
-   An RGB color space is defined by: Chromaticity coordinates of the red, green, and blue additive primaries. 
+An RGB color space is defined by: Chromaticity coordinates of the red, green, and blue additive primaries. 
 
-   ![rgbcolorspace](images\rgbcolorspace.png)
+![rgbcolorspace](images/rgbcolorspace.png)
 
-   Therefore, the rgb coordinates can be viewed as vector in this RGB color space.
+Therefore, the rgb coordinates can be viewed as vector in this RGB color space.
 
-   Referring to the same tutorial, I performed some color math based on vectors using Numpy.
+Referring to the same tutorial, I performed some color math based on vectors using Numpy.
 
-   ![numpycolorvector](images/numpycolorvector.PNG)
+![numpycolorvector](images/numpycolorvector.PNG)
 
-   ![colorvectormath2](images/colorvectormath2.PNG)
+![colorvectormath2](images/colorvectormath2.PNG)
 
-   
 
-6. **Map the word vector to the RGB color space (normalize to range 0-255)**
 
-   Having both the color vector and the word vector in hand, I then decided to map the word vector to RGB color range so that they share the same spatial coordinates in the RGB color space.
+7. **Map the word vector to the RGB color space (normalize to range 0-255)**
 
-   ![mapwordtorgb](images/mapwordtorgb.PNG)
+Having both the color vector and the word vector in hand, I then decided to map the word vector to RGB color range so that they share the same spatial coordinates in the RGB color space.
+
+![mapwordtorgb](images/mapwordtorgb.PNG)
 
 ​		And here we go! At this point I'm able to enter an word and get the closest color to it. Here's 		what I got:
 
