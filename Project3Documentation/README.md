@@ -4,7 +4,7 @@ For this personal project, I choose to continue explore NLP(natural language pro
 
 
 
-My initial idea is to make a website where user enters a piece of text, and then the text will be parsed into words, a semantically closest color will be found to each word. Eventually the website will display a color palate, or some graphics/shaders made with the colors.
+My initial idea is to make a website where user enters a piece of text, and then the text will be parsed into words, a semantically closest color will be found to each word. Eventually the website will display a color palate, or some graphics/shaders made with the colors. I choose to working with first with Python as the backend.
 
 
 
@@ -140,24 +140,46 @@ Another way I thought of to get a less extreme color is to get the color from a 
 
 
 
-flask as back-end
+------
 
-html as front-end
+With the backend mostly finished, I decided to shift my focus to the design of the website. After consulting the instructors, I was suggested to run Flask on Replit, and write HTML and CSS as the front end of my website.
 
-using replit 
+Below is a sketch I create for the design of my website. Ideally, the users first enters three analogous color words for red, green and blue, and a color space will be created accordingly using these three words as coordinate. Then, when user enters a piece of text, it will be traversed into words and the words will be mapped into this color space according to their semantic distance to each color word, representing their spatial relationship with each other.
 
-
-
-multiple algorithms executed to a survey-style interface
+![project3websitesketch](images/project3websitesketch.png)
 
 
 
-!(images/project3websitesketch.png)
+Below is my first iteration of the interface. Upon the input of the word "lake" and the color words "sun, grass and sky"， it will return a RGB coordinate of the word "lake", and the background color will turn to that color
 
 ![replitflaskdemo1](images/replitflaskdemo1.PNG)![replitflask](images/replitflask.PNG)
 
 
 
-My sketch
 
-![project3websitesketch](images/project3websitesketch.png)
+
+Next I worked on the traverse of text, and managed to output a list of RGB coordinate for the input text. The background will turn to a gradient composed by the list of colors.
+
+![replitflaskdemo3](images/replitflaskdemo3.PNG)
+
+![replitflaskdemo3console](images/replitflaskdemo3console.PNG)
+
+
+
+Bringing in a real-time spatial mapping of the words into the color space turned to be a really difficult task at first. I was thinking of using a 3D cube mode and positioning the word within the model space, but I didn't figured out how to achieve it. 
+
+Then I talked to Yixin and she suggested me to map it on a 2D surface instead of in a 3D model, which could be achieved using P5.js.
+
+In P5.js, I first upload a hexagon to represent the RGB space, and the label of RGB will changed according to the user's own definition of the RGB colors.
+
+![p5jsprocess1](images/p5jsprocess1.PNG)
+
+Then I uses the function below to convert the RGB coordinates of the traversed input text into a (x, y) position within the hexagon.
+
+![p5code](images/p5code.PNG)
+
+![p5jsprocess3](images/p5jsprocess3.PNG)
+
+![finished](images/finished.PNG)
+
+Then I added a z-index to the sketch.js and layered it over the html I had before, so that the gradient is also present in the background. And that's pretty much how I finished this project, here's the published link to my replit: https://replit.com/@RueQian/word2colorP5js?v=1
